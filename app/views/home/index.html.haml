@@ -1,0 +1,10 @@
+#main_oferta
+  .imagen
+    =image_tag(@oferta.picture.url)
+  .info
+    %h2
+      =@oferta.description
+      %span=' en ' + @oferta.name
+      %br
+      %br
+    =@oferta.addresses.first.street

@@ -1,0 +1,119 @@
+$font1: "Open Sans Condensed", sans-serif
+$font2: "Open Sans", sans-serif
+$font_color: darken(#6D6D6D,5)
+
+$max_width: 960px
+
+// Palette
+$brand: #Ffa500
+$contrast: #0CADA1
+
+$gray: #CCC
+$mid_gray: #666
+$dark_gray: #333333
+$button_gray: #CCC
+
+
+@mixin center
+  width: $max_width
+  margin: 0px auto
+
+@mixin rounded($radius: 5px) 
+  border-radius: $radius
+  -moz-border-radius: $radius
+  -webkit-border-radius: $radius
+  behavior: url(border-radius.htc)
+
+@mixin rounded_bottom 
+  $radius: 10px
+  -moz-border-radius-bottomright: $radius
+  border-bottom-right-radius: $radius
+  -webkit-border-bottom-right-radius: $radius
+  -moz-border-radius-bottomleft: $radius
+  border-bottom-left-radius: $radius
+  -webkit-border-bottom-left-radius: $radius
+
+@mixin rounded_left($radius: 5px)
+  -moz-border-radius-bottomleft: $radius
+  border-bottom-left-radius: $radius
+  -webkit-border-bottom-left-radius: $radius
+  -moz-border-radius-topleft: $radius
+  border-top-left-radius: $radius
+  -webkit-border-top-left-radius: $radius
+
+@mixin rounded_right($radius: 5px)
+  -moz-border-radius-bottomright: $radius
+  border-bottom-right-radius: $radius
+  -webkit-border-bottom-right-radius: $radius
+  -moz-border-radius-topright: $radius
+  border-top-right-radius: $radius
+  -webkit-border-top-right-radius: $radius
+
+
+@mixin inline-block
+  display: -moz-inline-stack
+  display: inline-block
+  zoom: 1
+  *display: inline
+
+@mixin shadow($expression: 0 0 5px rgba(0,0,0,0.25))
+  -webkit-box-shadow: $expression
+  -moz-box-shadow: $expression
+  box-shadow: $expression
+
+@mixin gradient($top: #FCB419, $mid: #FBA819, $bottom: lighten(#D99217,5))
+  background: $top
+  border: 1px solid $bottom
+  background-image: linear-gradient(bottom, $bottom 17%, $mid 59%, $top 80%)
+  background-image: -o-linear-gradient(bottom, $bottom 17%, $mid 59%, $top 80%)
+  background-image: -moz-linear-gradient(bottom, $bottom 17%, $mid 59%, $top 80%)
+  background-image: -webkit-linear-gradient(bottom, $bottom 17%, $mid 59%, $top 80%)
+  background-image: -ms-linear-gradient(bottom, $bottom 17%, $mid 59%, $top 80%)
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.17, $bottom), color-stop(0.59, $mid), color-stop(0.8, $top) )
+  /* For Internet Explorer 5.5 - 7 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$top}, endColorstr=#{$bottom})
+  /* For Internet Explorer 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$top}, endColorstr=#{$bottom})"
+
+@mixin min-height($height)
+  min-height: $height  
+  height: auto !important
+  height: $height
+
+@mixin text-shadow($expression: 0px 1px 1px black)
+  text-shadow: $expression
+
+@mixin action-button
+  cursor: pointer
+  display: block
+  text-decoration: none
+  text-align: center
+  line-height: 2
+  font-size: 1.2em
+  font-family: $font2
+  color: $gray
+  @include gradient(lighten($contrast,5), lighten($contrast,0), darken($contrast,5))
+  @include rounded(4px)
+  @include shadow
+  text-shadow: 0px 1px 0px black
+  &:hover
+    @include shadow
+    color: $dark_gray
+    cursor: pointer
+
+
+@mixin main-button
+  display: block
+  text-decoration: none
+  text-align: center
+  line-height: 2.5
+  font-size: 1.2em
+  color: $dark_gray
+  @include gradient
+  @include rounded(4px)
+  @include shadow
+  text-shadow: 0px 1px 0px #ffd073
+  &:hover
+    @include shadow
+    color: $dark_gray
+

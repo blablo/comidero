@@ -1,6 +1,14 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.10'
+gem 'haml'
+gem 'sass'
+gem 'jquery-rails', '>= 1.0.12'
+gem "paperclip", "~> 2.7"
+gem 'aws-sdk'
+gem 'ruby-debug'
+gem "geocoder"
+gem "nested_form"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

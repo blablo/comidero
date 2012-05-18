@@ -1,0 +1,15 @@
+.local
+  .field
+    =f.label "Ciudad"
+    =f.select :city, ['Guadalajara']
+  .field
+    =f.label 'Teléfono'
+    =f.text_field :phone
+  .field
+    =f.label 'Dirección'
+    %br
+    =f.text_field :street
+  .field
+    =f.text_field :street2
+  .field
+    =f.link_to_remove "Quitar Local"
