@@ -10,7 +10,7 @@
     #header
       .header_info
         =link_to(image_tag('comidero.png', :width => "250px"),'/')
-        =link_to('publica una promoción', new_oferta_url, :class => 'publica_url')
+        =link_to('publica una promoción', new_restaurant_url, :class => 'publica_url')
     #content
       %ul#days
         -day_list.each do |day|

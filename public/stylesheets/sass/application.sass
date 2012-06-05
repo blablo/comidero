@@ -4,7 +4,7 @@ body
   background: url(http://subtlepatterns.com/patterns/brushed_alu.png)
   margin: 0
   font-size: 15px
-  font-family: 'Righteous', cursive
+  font-family: helvetica
 
 h1
   font-size: 2em
@@ -12,7 +12,8 @@ h1
   margin-bottom: 1em
 
 h2
-  font-size: 2em
+  font-size: 2.3em
+  line-height: 1.2
 
 input[type="text"]
   margin-top: 3px
@@ -23,6 +24,7 @@ input[type="text"]
   background: #3d9ad1
   margin-bottom: 1em
   border-bottom: 5px solid $brand
+  font-family: $font1
   .header_info
     @include center
     a.publica_url
@@ -32,6 +34,7 @@ input[type="text"]
 
 #days
   @include rounded_left
+  font-family: $font1
   float: left
   list-style: none
   margin: 0
@@ -59,6 +62,8 @@ input[type="text"]
 #content
   @include center
   overflow: auto
+  strong
+    font-weight: bold
   #main
     @include rounded_bottom
     @include rounded_right
@@ -80,6 +85,19 @@ input[type="text"]
       float: left
       width: 380px
       text-align: right
+  .ofertas
+    padding: 1.5em    
+  .oferta
+    margin: 0.5em 0
+    padding: 0.5em
+    overflow: hidden
+    background: darken(#FAFAFA, 10)
+    img
+      float: left
+      margin-right: 1em
+    h2
+      font-size: 1.5em
+
 
 #new_oferta
   .field
@@ -91,6 +109,10 @@ input[type="text"]
     textarea
       width: 100%
       height: 60px
+  .day_list
+    margin-top: 1em
+    label
+      font-family: arial
   a
     text-decoration: none
     color: $font_color

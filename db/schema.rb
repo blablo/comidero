@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120518220104) do
+ActiveRecord::Schema.define(:version => 20120604181134) do
 
   create_table "addresses", :force => true do |t|
     t.string   "street"
@@ -19,23 +19,33 @@ ActiveRecord::Schema.define(:version => 20120518220104) do
     t.string   "phone"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "oferta_id"
+    t.integer  "restaurant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "ofertas", :force => true do |t|
-    t.string   "name"
+    t.integer  "restaurant_id"
     t.text     "description"
     t.string   "value"
     t.datetime "validity"
     t.string   "days"
     t.string   "hour"
     t.string   "conditions"
-    t.datetime "picture_updated_at"
     t.string   "picture_content_type"
+    t.datetime "picture_updated_at"
     t.string   "picture_file_name"
     t.integer  "picture_file_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "restaurants", :force => true do |t|
+    t.string   "name"
+    t.string   "logo_content_type"
+    t.datetime "logo_updated_at"
+    t.string   "logo_file_name"
+    t.integer  "logo_file_size"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,7 +1,7 @@
 class CreateOfertas < ActiveRecord::Migration
   def self.up
     create_table :ofertas do |t|
-      t.string :name
+      t.integer :restaurant_id
       t.text :description
       t.string :value
       t.datetime :validity

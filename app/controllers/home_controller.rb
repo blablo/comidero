@@ -1,6 +1,9 @@
 class HomeController < ApplicationController
   def index
-    @oferta = Oferta.last
+    today = Time.now.wday
+    @ofertas = Oferta.by_wday(today)
+    @oferta = @ofertas.first
+
   end
 
 end

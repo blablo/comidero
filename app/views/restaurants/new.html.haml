@@ -1,0 +1,4 @@
+#new_oferta
+  %h1 Publica una promoción
+  =nested_form_for @restaurant, :html => { :multipart => true } do |f|
+    =render 'form', :f => f

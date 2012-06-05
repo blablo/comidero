@@ -1,0 +1,50 @@
+.field
+  =f.label 'Descripción de la Promoción'
+  %br
+  =f.text_field :description
+
+.field
+  =f.label '¿Cuándo expira?'
+  %br
+  =f.date_select :validity
+
+.field
+  =f.label '¿En cuáles días aplica la promoción?'
+  %br
+  .day_list
+    =f.check_box :days, {:multiple => true}, 1
+    =f.label 'Lunes', :for => "restaurant_ofertas_attributes_0_days_1"
+    %br
+    =f.check_box :days, {:multiple => true}, 2
+    =f.label 'Martes', :for => "restaurant_ofertas_attributes_0_days_2"
+    %br
+    =f.check_box :days, {:multiple => true}, 3
+    =f.label 'Miércoles', :for => "restaurant_ofertas_attributes_0_days_3"
+    %br
+    =f.check_box :days, {:multiple => true}, 4
+    =f.label 'Jueves', :for => "restaurant_ofertas_attributes_0_days_4"
+    %br
+    =f.check_box :days, {:multiple => true}, 5
+    =f.label 'Viernes', :for => "restaurant_ofertas_attributes_0_days_5"
+    %br
+    =f.check_box :days, {:multiple => true}, 6
+    =f.label 'Sábado', :for => "restaurant_ofertas_attributes_0_days_6"
+    %br
+    =f.check_box :days, {:multiple => true}, 7
+    =f.label 'Domingo', :for => "restaurant_ofertas_attributes_0_days_7"
+    %br
+
+.field
+  =f.label '¿A que hora es valida?'
+  %br
+  =f.text_field :hour, :placeholder => "Ej: 3:00pm - 5:00 pm"
+
+.field
+  =f.label 'Condiciones'
+  %br
+  =f.text_area :conditions
+
+.field
+  =f.label 'Foto de la Comida'
+  %br
+  =f.file_field :picture

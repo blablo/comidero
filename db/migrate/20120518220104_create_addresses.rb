@@ -7,7 +7,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.string :phone
       t.float :latitude
       t.float :longitude
-      t.integer :oferta_id
+      t.integer :restaurant_id
 
       t.timestamps
     end

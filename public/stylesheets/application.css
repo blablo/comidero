@@ -2,7 +2,7 @@ body {
   background: url(http://subtlepatterns.com/patterns/brushed_alu.png);
   margin: 0;
   font-size: 15px;
-  font-family: "Righteous", cursive; }
+  font-family: helvetica; }
 
 h1 {
   font-size: 2em;
@@ -10,7 +10,8 @@ h1 {
   margin-bottom: 1em; }
 
 h2 {
-  font-size: 2em; }
+  font-size: 2.3em;
+  line-height: 1.2; }
 
 input[type="text"] {
   margin-top: 3px;
@@ -20,7 +21,8 @@ input[type="text"] {
   padding: 0.5em 0;
   background: #3d9ad1;
   margin-bottom: 1em;
-  border-bottom: 5px solid #ffa500; }
+  border-bottom: 5px solid #ffa500;
+  font-family: "Righteous", cursive; }
   #header .header_info {
     width: 960px;
     margin: 0px auto; }
@@ -36,6 +38,7 @@ input[type="text"] {
   -moz-border-radius-topleft: 5px;
   border-top-left-radius: 5px;
   -webkit-border-top-left-radius: 5px;
+  font-family: "Righteous", cursive;
   float: left;
   list-style: none;
   margin: 0;
@@ -66,6 +69,8 @@ input[type="text"] {
   width: 960px;
   margin: 0px auto;
   overflow: auto; }
+  #content strong {
+    font-weight: bold; }
   #content #main {
     -moz-border-radius-bottomright: 10px;
     border-bottom-right-radius: 10px;
@@ -103,6 +108,18 @@ input[type="text"] {
       float: left;
       width: 380px;
       text-align: right; }
+  #content .ofertas {
+    padding: 1.5em; }
+  #content .oferta {
+    margin: 0.5em 0;
+    padding: 0.5em;
+    overflow: hidden;
+    background: #e1e1e1; }
+    #content .oferta img {
+      float: left;
+      margin-right: 1em; }
+    #content .oferta h2 {
+      font-size: 1.5em; }
 
 #new_oferta .field {
   width: 960px;
@@ -114,6 +131,10 @@ input[type="text"] {
   #new_oferta .field textarea {
     width: 100%;
     height: 60px; }
+#new_oferta .day_list {
+  margin-top: 1em; }
+  #new_oferta .day_list label {
+    font-family: arial; }
 #new_oferta a {
   text-decoration: none;
   color: #606060; }

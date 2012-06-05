@@ -12,5 +12,11 @@ module ApplicationHelper
 
     return sorted_days
   end
+
+  def fecha_hoy
+    today = Time.now.wday - 1
+    days = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo']
+    days[today] + " " + Time.now.day.to_s + " de junio"
+  end
   
 end

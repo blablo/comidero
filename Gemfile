@@ -6,9 +6,14 @@ gem 'sass'
 gem 'jquery-rails', '>= 1.0.12'
 gem "paperclip", "~> 2.7"
 gem 'aws-sdk'
-#gem 'ruby-debug'
 gem "geocoder"
 gem "nested_form"
+
+
+group :development do 
+gem 'ruby-debug'
+end
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

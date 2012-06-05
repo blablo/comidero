@@ -1,0 +1,20 @@
+.field
+  =f.label 'Nombre del Restaurante'
+  %br
+  =f.text_field :name
+
+.field
+  =f.label 'Logotipo'
+  %br
+  =f.file_field :logo
+
+
+=f.fields_for :ofertas
+
+
+=f.fields_for :addresses
+%br
+.field{:style => 'text-align: right'}
+  =f.link_to_add "Agregar otro local", :addresses
+%br
+=f.submit
