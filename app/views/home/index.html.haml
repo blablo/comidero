@@ -1,9 +1,10 @@
-%h1 Ofertas para hoy, #{fecha_hoy}.
+%h1 Ofertas del día, #{fecha_hoy}.
 
 -if @oferta
   #main_oferta
     .imagen
-      =image_tag(@oferta.picture.url(:medium))
+      .imagen2
+        =image_tag(@oferta.picture.url(:medium))
     .info
       %h2
         =@oferta.description.titleize
@@ -11,12 +12,6 @@
       %span=' en ' + @oferta.restaurant.name.titleize
       %br
       %br
-      -if !@oferta.conditions.blank?
-        %strong Condiciones
-        %br
-        =@oferta.conditions
-        %br
-        %br
       -if !@oferta.hour.blank?
         %strong Horario en el que aplica
         %br
@@ -33,11 +28,20 @@
         %br
         =@oferta.restaurant.addresses.first.phone
         %br
+        %br
+      -if !@oferta.conditions.blank?
+        .conditions
+          %strong Condiciones
+          %br
+          =@oferta.conditions
+          %br
+          %br
 
 .ofertas
   -@ofertas.each do |oferta|
     .oferta
-      =image_tag(oferta.picture.url(:thumb))
+      .imagen
+        =image_tag(oferta.picture.url(:thumb))
       %h2=oferta.description.titleize
       en
       =oferta.restaurant.name.titleize
@@ -54,3 +58,4 @@
         %br
         =oferta.hour
         %br
+    %hr

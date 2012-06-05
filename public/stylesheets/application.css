@@ -11,7 +11,9 @@ h1 {
 
 h2 {
   font-size: 2.3em;
-  line-height: 1.2; }
+  line-height: 1.2;
+  color: #ffa500;
+  font-family: "Righteous", cursive; }
 
 input[type="text"] {
   margin-top: 3px;
@@ -45,7 +47,7 @@ input[type="text"] {
   padding: 0.5em;
   font-size: 1.2em;
   background: white; }
-  #days li:first-child a {
+  #days li a.current_day {
     background: #57ea00;
     padding: 0.7em;
     font-size: 1.3em;
@@ -70,7 +72,7 @@ input[type="text"] {
   margin: 0px auto;
   overflow: auto; }
   #content strong {
-    font-weight: bold; }
+    font-family: "Righteous", cursive; }
   #content #main {
     -moz-border-radius-bottomright: 10px;
     border-bottom-right-radius: 10px;
@@ -88,6 +90,7 @@ input[type="text"] {
     padding: 0.6em;
     overflow: auto; }
   #content #main_oferta {
+    font-size: 1.2em;
     background: #fafafa;
     border-radius: 5px;
     -moz-border-radius: 5px;
@@ -96,13 +99,21 @@ input[type="text"] {
     overflow: auto;
     padding: 0.5em; }
     #content #main_oferta .imagen {
-      width: 400px;
+      width: 398px;
       float: left;
       overflow: hidden;
       border-radius: 5px;
       -moz-border-radius: 5px;
       -webkit-border-radius: 5px;
-      behavior: url(border-radius.htc); }
+      behavior: url(border-radius.htc);
+      border: 1px solid #737373; }
+      #content #main_oferta .imagen .imagen2 {
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        behavior: url(border-radius.htc);
+        overflow: hidden; }
     #content #main_oferta .info {
       margin: 0 0.5em;
       float: left;
@@ -113,13 +124,20 @@ input[type="text"] {
   #content .oferta {
     margin: 0.5em 0;
     padding: 0.5em;
-    overflow: hidden;
-    background: #e1e1e1; }
-    #content .oferta img {
+    overflow: hidden; }
+    #content .oferta .imagen {
       float: left;
-      margin-right: 1em; }
+      margin-right: 1em;
+      border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      behavior: url(border-radius.htc);
+      border: 1px solid #3d9ad1; }
     #content .oferta h2 {
       font-size: 1.5em; }
+
+.conditions {
+  font-size: 0.8em; }
 
 #new_oferta .field {
   width: 960px;

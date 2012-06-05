@@ -2,7 +2,7 @@ class Oferta < ActiveRecord::Base
 belongs_to :restaurant
 
 has_attached_file :picture, 
-  :styles => { :medium => "400x350#", :thumb => "250x250#" },
+  :styles => { :medium => "400x350#", :thumb => "170x170#" },
   :storage => :s3,
   :s3_credentials => "#{Rails.root.to_s}/config/s3.yml",
   :path => "/:style/:id/:filename"

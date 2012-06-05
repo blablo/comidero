@@ -13,7 +13,12 @@
         =link_to('publica una promoción', new_restaurant_url, :class => 'publica_url')
     #content
       %ul#days
-        -day_list.each do |day|
-          %li=link_to(day, '#')
+        -day_list.each_with_index do |day, index|
+          -if params[:wday] and params[:wday] == day.parameterize
+            %li=link_to(day, '/ofertas/' + day.parameterize, :class => "current_day")
+          -elsif params[:wday].nil? and index == 0
+            %li=link_to(day, '/ofertas/' + day.parameterize, :class => "current_day")
+          -else
+            %li=link_to(day, '/ofertas/' + day.parameterize)
       #main
         =yield

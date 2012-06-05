@@ -1,7 +1,12 @@
 Comidero::Application.routes.draw do
   get "home/index"
+
+  match 'ofertas/:wday' => 'home#index'
+
   resources :ofertas
   resources :restaurants
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

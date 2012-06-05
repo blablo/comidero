@@ -16,7 +16,14 @@ module ApplicationHelper
   def fecha_hoy
     today = Time.now.wday - 1
     days = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo']
-    days[today] + " " + Time.now.day.to_s + " de junio"
+    if params[:wday]
+      dia = params[:wday]
+      dia = "miércoles" if params[:wday] == "miercoles"
+      dia = "sábado" if params[:wday] == "sabado"
+      return dia
+    else
+      return days[today] + " " + Time.now.day.to_s + " de junio"
+    end
   end
   
 end
