@@ -19,10 +19,11 @@
         %br
       %br
       -if @oferta.restaurant.addresses
-        %strong Dirección
-        %br
-        =@oferta.restaurant.addresses.first.street
-        %br
+        -if !@oferta.restaurant.addresses.first.street.blank?
+          %strong Dirección
+          %br
+          =@oferta.restaurant.addresses.first.street
+          %br
         %br
         %strong Teléfono
         %br
