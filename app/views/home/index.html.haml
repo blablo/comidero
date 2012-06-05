@@ -1,37 +1,38 @@
 %h1 Ofertas para hoy, #{fecha_hoy}.
 
-#main_oferta
-  .imagen
-    =image_tag(@oferta.picture.url(:medium))
-  .info
-    %h2
-      =@oferta.description.titleize
-      %br
-    %span=' en ' + @oferta.restaurant.name.titleize
-    %br
-    %br
-    -if !@oferta.conditions.blank?
-      %strong Condiciones
-      %br
-      =@oferta.conditions
+-if @oferta
+  #main_oferta
+    .imagen
+      =image_tag(@oferta.picture.url(:medium))
+    .info
+      %h2
+        =@oferta.description.titleize
+        %br
+      %span=' en ' + @oferta.restaurant.name.titleize
       %br
       %br
-    -if !@oferta.hour.blank?
-      %strong Horario en el que aplica
+      -if !@oferta.conditions.blank?
+        %strong Condiciones
+        %br
+        =@oferta.conditions
+        %br
+        %br
+      -if !@oferta.hour.blank?
+        %strong Horario en el que aplica
+        %br
+        =@oferta.hour
+        %br
       %br
-      =@oferta.hour
-      %br
-    %br
-    -if @oferta.restaurant.addresses
-      %strong Dirección
-      %br
-      =@oferta.restaurant.addresses.first.street
-      %br
-      %br
-      %strong Teléfono
-      %br
-      =@oferta.restaurant.addresses.first.phone
-      %br
+      -if @oferta.restaurant.addresses
+        %strong Dirección
+        %br
+        =@oferta.restaurant.addresses.first.street
+        %br
+        %br
+        %strong Teléfono
+        %br
+        =@oferta.restaurant.addresses.first.phone
+        %br
 
 .ofertas
   -@ofertas.each do |oferta|
