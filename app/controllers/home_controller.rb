@@ -15,7 +15,7 @@ class HomeController < ApplicationController
     end
 
     @ofertas = Oferta.by_wday(wday)
-    @oferta = @ofertas.first
+    @oferta = @ofertas.last
 
   end
 
