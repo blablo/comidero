@@ -25,7 +25,6 @@ class OfertasController < ApplicationController
   # GET /ofertas/new.xml
   def new
     @oferta = Oferta.new
-    @oferta.addresses.build
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @oferta }
@@ -41,7 +40,7 @@ class OfertasController < ApplicationController
   # POST /ofertas.xml
   def create
     @oferta = Oferta.new(params[:oferta])
-
+    @oferta.days.delete_if{|x| x == "0"}
     respond_to do |format|
       if @oferta.save
         format.html { redirect_to(@oferta, :notice => 'Oferta was successfully created.') }

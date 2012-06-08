@@ -2,6 +2,10 @@
 
 -if @oferta
   #main_oferta
+    .social_main
+      .fb-like{"data-href"=>cool_oferta_url(@oferta), "data-send" => "false", "data-width" => "80", "data-layout" => "button_count", "data-show-faces" => "false"}
+      %a.twitter-share-button{:href => "https://twitter.com/share", "data-url" => cool_oferta_url(@oferta), "data-lang" => "en"} tweet
+
     .imagen
       .imagen2
         =image_tag(@oferta.picture.url(:medium))
@@ -38,26 +42,35 @@
           =@oferta.conditions
           %br
           %br
+    =link_to("Ver más", cool_oferta_url(@oferta), :class => "ver_mas")
+    %br
+
 
 .ofertas
   -@ofertas.each do |oferta|
     .oferta
+      .social
+        .fb-like{"data-href"=>cool_oferta_url(@oferta), "data-send" => "false", "data-width" => "80", "data-layout" => "button_count", "data-show-faces" => "false"}
+        %a.twitter-share-button{:href => "https://twitter.com/share", "data-url" => cool_oferta_url(@oferta), "data-lang" => "en"} tweet
+
       .imagen
         =image_tag(oferta.picture.url(:thumb))
-      %h2=oferta.description.titleize
-      en
-      =oferta.restaurant.name.titleize
-      %br
-      %br
-      -if !oferta.conditions.blank?
-        %strong Condiciones
-        %br
-        =oferta.conditions
+      .info
+        %h2=oferta.description.titleize
+        en
+        =oferta.restaurant.name.titleize
         %br
         %br
-      -if !oferta.hour.blank?
-        %strong Horario en el que aplica
-        %br
-        =oferta.hour
-        %br
-    %hr
+        -if !oferta.conditions.blank?
+          %strong Condiciones
+          %br
+          =oferta.conditions
+          %br
+          %br
+        -if !oferta.hour.blank?
+          %strong Horario en el que aplica
+          %br
+          =oferta.hour
+          %br
+      =link_to("Ver más", cool_oferta_url(oferta), :class => "ver_mas")
+

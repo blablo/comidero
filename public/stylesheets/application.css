@@ -92,6 +92,43 @@ input[type="text"] {
     background: white;
     padding: 0.6em;
     overflow: auto; }
+  #content .ver_mas {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 2.5;
+    font-size: 1.2em;
+    color: #333333;
+    background: #fcb419;
+    border: 1px solid #e89f22;
+    background-image: linear-gradient(bottom, #e89f22 17%, #fba819 59%, #fcb419 80%);
+    background-image: -o-linear-gradient(bottom, #e89f22 17%, #fba819 59%, #fcb419 80%);
+    background-image: -moz-linear-gradient(bottom, #e89f22 17%, #fba819 59%, #fcb419 80%);
+    background-image: -webkit-linear-gradient(bottom, #e89f22 17%, #fba819 59%, #fcb419 80%);
+    background-image: -ms-linear-gradient(bottom, #e89f22 17%, #fba819 59%, #fcb419 80%);
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.17, #e89f22), color-stop(0.59, #fba819), color-stop(0.8, #fcb419));
+    /* For Internet Explorer 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fcb419, endColorstr=#e89f22);
+    /* For Internet Explorer 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#fcb419, endColorstr=#e89f22)";
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    behavior: url(border-radius.htc);
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    text-shadow: 0px 1px 0px #ffd073;
+    width: 120px;
+    line-height: 1.5;
+    hegiht: 50px;
+    float: right;
+    margin-right: 10px; }
+    #content .ver_mas:hover {
+      -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+      -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+      color: #333333; }
   #content #main_oferta {
     font-size: 1.2em;
     background: #fafafa;
@@ -121,13 +158,26 @@ input[type="text"] {
       margin: 0 0.5em;
       float: left;
       width: 380px;
-      text-align: right; }
+      text-align: right;
+      height: 280px; }
+    #content #main_oferta .social_main {
+      text-align: right;
+      float: right;
+      margin-bottom: 0.5em;
+      width: 380px; }
+      #content #main_oferta .social_main .fb-like {
+        float: right; }
   #content .ofertas {
     padding: 1.5em; }
   #content .oferta {
     margin: 0.5em 0;
     padding: 0.5em;
-    overflow: hidden; }
+    overflow: hidden;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    behavior: url(border-radius.htc);
+    background: #f2f2f2; }
     #content .oferta .imagen {
       float: left;
       margin-right: 1em;
@@ -138,6 +188,14 @@ input[type="text"] {
       border: 1px solid #3d9ad1; }
     #content .oferta h2 {
       font-size: 1.5em; }
+    #content .oferta .info {
+      height: 140px; }
+    #content .oferta .social {
+      float: right; }
+      #content .oferta .social .twitter-share-button {
+        float: right; }
+      #content .oferta .social .fb-like {
+        float: right; }
 
 .conditions {
   font-size: 0.8em; }

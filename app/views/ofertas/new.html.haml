@@ -2,48 +2,10 @@
   %h1 Publica una promoción
   =nested_form_for @oferta, :html => { :multipart => true } do |f|
     .field
-      =f.label 'Nombre del Restaurante'
+      =f.label 'Id Restaurante'
       %br
-      =f.text_field :name
+      =f.text_field :restaurant_id
 
-    .field
-      =f.label 'Descripción de la Promoción'
-      %br
-      =f.text_field :description
+    =render 'restaurants/oferta_fields', :f => f
 
-    .field
-      =f.label 'Valor'
-      %br
-      =f.text_field :value
-
-    .field
-      =f.label '¿Cuándo expira?'
-      %br
-      =f.date_select :validity
-
-    .field
-      =f.label '¿En cuáles días aplica la promción?'
-      %br
-      =f.text_field :days
-
-    .field
-      =f.label '¿A que hora es valida?'
-      %br
-      =f.text_field :hour
-
-    .field
-      =f.label 'Condiciones'
-      %br
-      =f.text_area :conditions
-
-    .field
-      =f.label 'Foto de la Comida'
-      %br
-      =f.file_field :picture
-
-    =f.fields_for :addresses 
-    %br
-    .field{:style => 'text-align: right'}
-      =f.link_to_add "Agregar Local", :addresses
-    %br
     =f.submit

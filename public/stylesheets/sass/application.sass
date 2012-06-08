@@ -76,6 +76,13 @@ input[type="text"]
     background: white
     padding: 0.6em
     overflow: auto
+  .ver_mas
+    @include main-button
+    width: 120px
+    line-height: 1.5
+    hegiht: 50px
+    float: right
+    margin-right: 10px
   #main_oferta
     font-size: 1.2em
     background: #FAFAFA
@@ -97,12 +104,25 @@ input[type="text"]
       float: left
       width: 380px
       text-align: right
+      height: 280px
+    .social_main
+      text-align: right
+      float: right
+      margin-bottom: 0.5em
+      width: 380px
+      .fb-like
+        float: right
+      .twitter-share-button
+
+
   .ofertas
     padding: 1.5em
   .oferta
     margin: 0.5em 0
     padding: 0.5em
     overflow: hidden
+    @include rounded
+    background: lighten($gray, 15)
     .imagen
       float: left
       margin-right: 1em
@@ -110,6 +130,14 @@ input[type="text"]
       border: 1px solid $blue
     h2
       font-size: 1.5em
+    .info
+      height: 140px
+    .social
+      float: right
+      .twitter-share-button
+        float: right
+      .fb-like
+        float: right
 
 .conditions
   font-size: 0.8em

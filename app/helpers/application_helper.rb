@@ -25,5 +25,9 @@ module ApplicationHelper
       return days[today] + " " + Time.now.day.to_s + " de junio"
     end
   end
+
+  def cool_oferta_url(oferta)
+    ofertas_url + "/" + oferta.restaurant.name.parameterize + "/" + oferta.description.parameterize + "-" + oferta.id.to_s
+  end
   
 end

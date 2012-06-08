@@ -1,9 +1,13 @@
 Comidero::Application.routes.draw do
   get "home/index"
 
-  match 'ofertas/:wday' => 'home#index'
+  match 'ofertas/:wday' => 'home#index', :constraints => {:wday => /lunes|martes|miercoles|jueves|viernes|sabado|domingo/}
 
-  resources :ofertas
+  resources :ofertas do
+    collection do
+    get '/:restaurant/:titulo-:id' => 'ofertas#show'
+      end
+  end
   resources :restaurants
 
 

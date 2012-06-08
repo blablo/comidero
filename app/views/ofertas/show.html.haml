@@ -1,0 +1,42 @@
+#main_oferta
+  .imagen
+    .imagen2
+      =image_tag(@oferta.picture.url(:medium))
+  .info
+    %h2
+      =@oferta.description.titleize
+      %br
+    %span=' en ' + @oferta.restaurant.name.titleize
+    %br
+    %br
+    -if !@oferta.hour.blank?
+      %strong Horario en el que aplica
+      %br
+      =@oferta.hour
+      %br
+    %br
+    -if @oferta.restaurant.addresses
+      -if !@oferta.restaurant.addresses.first.street.blank?
+        %strong Dirección
+        %br
+        =@oferta.restaurant.addresses.first.street
+        %br
+      %br
+      -if !@oferta.restaurant.addresses.first.phone.blank?
+        %strong Teléfono
+        %br
+        =@oferta.restaurant.addresses.first.phone
+        %br
+        %br
+    -if !@oferta.conditions.blank?
+      .conditions
+        %strong Condiciones
+        %br
+        =@oferta.conditions
+        %br
+        %br
+  .social_main
+    .fb-like{"data-href"=>cool_oferta_url(@oferta), "data-send" => "false", "data-width" => "80", "data-layout" => "button_count", "data-show-faces" => "false"}
+    %a.twitter-share-button{:href => "https://twitter.com/share", "data-url" => cool_oferta_url(@oferta), "data-lang" => "en"} tweet
+
+hola
