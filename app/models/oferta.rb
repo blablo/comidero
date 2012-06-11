@@ -1,5 +1,6 @@
 class Oferta < ActiveRecord::Base
 belongs_to :restaurant
+has_many :main_ofertas
 
 has_attached_file :picture, 
   :styles => { :medium => "400x350#", :thumb => "170x170#" },

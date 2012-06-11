@@ -159,6 +159,8 @@ input[type="text"] {
       float: left;
       width: 380px;
       text-align: right;
+      min-height: 280px;
+      height: auto !important;
       height: 280px; }
     #content #main_oferta .social_main {
       text-align: right;

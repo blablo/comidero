@@ -15,8 +15,8 @@ class HomeController < ApplicationController
     end
 
     @ofertas = Oferta.by_wday(wday)
-    @oferta = @ofertas.last
 
+    @oferta = MainOferta.find(wday).oferta rescue @oferta = @ofertas.last
   end
 
 end
