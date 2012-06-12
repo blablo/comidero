@@ -49,9 +49,10 @@
           =suc.street
           %br
           =raw suc.street2 + "<br />" unless suc.street2.blank?
+          -unless suc.phone.blank?
+            %strong Tel:
+            =suc.phone
 
-          %strong Tel:
-          =suc.phone
 
 
 
