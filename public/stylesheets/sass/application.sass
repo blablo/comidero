@@ -17,6 +17,12 @@ h2
   color: $brand
   font-family: $font1
 
+h3
+  font-size: 2em
+  color: $contrast
+  line-height: 1.4
+  margin-bottom: 0.5em
+
 input[type="text"]
   margin-top: 3px
   height: 30px
@@ -76,71 +82,30 @@ input[type="text"]
     background: white
     padding: 0.6em
     overflow: auto
-  .ver_mas
-    @include main-button
-    width: 120px
-    line-height: 1.5
-    hegiht: 50px
+  
+
+@import "ofertas"
+
+#oferta
+  .fb-comments
+    margin-left: 70px
+    margin-top: 2em
+  #sucursales
+    margin-left: 2em
+  .sucursal
+    margin-bottom: 1em
+  #mapa
+    width: 400px
+    height: 250px
+    border: 1px solid $gray
+    #include rounded
     float: right
-    margin-right: 10px
-  #main_oferta
-    font-size: 1.2em
-    background: #FAFAFA
-    @include rounded
-    overflow: auto
-    padding: 0.5em
-    .imagen
-      width: 398px
-      float: left
-      overflow: hidden
-      @include rounded
-      border: 1px solid lighten($mid_gray,5)
-      .imagen2
-        border: 1px solid $gray
-        @include rounded
-        overflow: hidden
-    .info
-      margin: 0 0.5em
-      float: left
-      width: 380px
-      text-align: right
-      @include min-height(280px)
-    .social_main
-      text-align: right
-      float: right
-      margin-bottom: 0.5em
-      width: 380px
-      .fb-like
-        float: right
-      .twitter-share-button
+    margin-right: 2em
+  #map_canvas 
+    margin: 0
+    padding: 0
+    height: 100%
 
-
-  .ofertas
-    padding: 1.5em
-  .oferta
-    margin: 0.5em 0
-    padding: 0.5em
-    overflow: hidden
-    @include rounded
-    background: lighten($gray, 15)
-    .imagen
-      float: left
-      margin-right: 1em
-      @include rounded
-      border: 1px solid $blue
-    h2
-      font-size: 1.5em
-    .info
-      height: 140px
-    .social
-      float: right
-      .twitter-share-button
-        float: right
-      .fb-like
-        float: right
-
-.conditions
-  font-size: 0.8em
 
 
 #new_oferta

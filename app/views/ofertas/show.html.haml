@@ -1,41 +1,58 @@
-#main_oferta
-  .imagen
-    .imagen2
-      =image_tag(@oferta.picture.url(:medium))
-  .info
-    %h2
-      =@oferta.description.titleize
-      %br
-    %span=' en ' + @oferta.restaurant.name.titleize
-    %br
-    %br
-    -if !@oferta.hour.blank?
-      %strong Horario en el que aplica
-      %br
-      =@oferta.hour
-      %br
-    %br
+-content_for :javascript do
+  %script{:type=>"text/javascript"}
+    var sucursales = [
     -if @oferta.restaurant.addresses
-      -if !@oferta.restaurant.addresses.first.street.blank?
-        %strong Dirección
+      -@oferta.restaurant.addresses.each_with_index do |suc, index|
+        -if index < @oferta.restaurant.addresses.count - 1
+          new google.maps.LatLng(suc.latitude, suc.longitude),
+        -else
+          new google.maps.LatLng(suc.latitude, suc.longitude)
+    ];
+
+#oferta
+  #main_oferta
+    .imagen
+      .imagen2
+        =image_tag(@oferta.picture.url(:medium))
+    .info
+      %h2
+        =@oferta.description.titleize
         %br
-        =@oferta.restaurant.addresses.first.street
+      %span=' en ' + @oferta.restaurant.name.titleize
+      %br
+      %br
+      -if !@oferta.hour.blank?
+        %strong Horario en el que aplica
+        %br
+        =@oferta.hour
         %br
       %br
-      -if !@oferta.restaurant.addresses.first.phone.blank?
-        %strong Teléfono
-        %br
-        =@oferta.restaurant.addresses.first.phone
-        %br
-        %br
-    -if !@oferta.conditions.blank?
-      .conditions
-        %strong Condiciones
-        %br
-        =@oferta.conditions
-        %br
-        %br
-  .social_main
-    .fb-like{"data-href"=>cool_oferta_url(@oferta), "data-send" => "false", "data-width" => "80", "data-layout" => "button_count", "data-show-faces" => "false"}
-    %a.twitter-share-button{:href => "https://twitter.com/share", "data-url" => cool_oferta_url(@oferta), "data-lang" => "en"} tweet
+      -if !@oferta.conditions.blank?
+        .conditions
+          %strong Condiciones
+          %br
+          =@oferta.conditions
+          %br
+          %br
+    .social_main
+      .fb-like{"data-href"=>cool_oferta_url(@oferta), "data-send" => "false", "data-width" => "80", "data-layout" => "button_count", "data-show-faces" => "false"}
+      %a.twitter-share-button{:href => "https://twitter.com/share", "data-url" => cool_oferta_url(@oferta), "data-lang" => "en"} tweet
 
+  -if @oferta.restaurant.addresses
+    #sucursales
+      %h3 Sucursales
+      #mapa
+        #map_canvas
+      -@oferta.restaurant.addresses.each do |suc|
+        .sucursal
+          %strong Dirección:
+          =suc.street
+          %br
+          =raw suc.street2 + "<br />" unless suc.street2.blank?
+
+          %strong Tel:
+          =suc.phone
+
+
+
+  .fb-comments{"data-href"=>"http://comidero.com", "data-num-posts"=>"2", "data-width"=>"670"}
