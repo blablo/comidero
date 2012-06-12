@@ -1,3 +1,12 @@
+-content_for :meta do
+  %meta{:property=>"og:title", :content=>"Me encanta esta oferta"}
+  %meta{:property=>"og:type", :content=>"food"}
+  %meta{:property=>"og:url", :content=>cool_oferta_url(@oferta)}
+  %meta{:property=>"og:image", :content=>@oferta.picture.url(:medium)}
+  %meta{:property=>"og:site_name", :content=>"Comidero"}
+  %meta{:property=>"fb:app_id", :content=>"369418443117706"}
+  %meta{:property=>"og:description", :content=>@oferta.description}
+
 -content_for :javascript do
   %script{:type=>"text/javascript"}
     var sucursales = [
