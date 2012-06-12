@@ -4,9 +4,9 @@
     -if @oferta.restaurant.addresses
       -@oferta.restaurant.addresses.each_with_index do |suc, index|
         -if index < @oferta.restaurant.addresses.count - 1
-          new google.maps.LatLng(suc.latitude, suc.longitude),
+          new google.maps.LatLng(#{suc.latitude}, #{suc.longitude}),
         -else
-          new google.maps.LatLng(suc.latitude, suc.longitude)
+          new google.maps.LatLng(#{suc.latitude}, #{suc.longitude})
     ];
 
 #oferta
