@@ -5,7 +5,7 @@
   %meta{:property=>"og:image", :content=>@oferta.picture.url(:medium)}
   %meta{:property=>"og:site_name", :content=>"Comidero"}
   %meta{:property=>"fb:app_id", :content=>"369418443117706"}
-  %meta{:property=>"og:description", :content=>@oferta.description + " en " + @oferta.restaurant.name + ". Válida solos los " + @oferta.valid_days.to_sentence.gsub(', and', ' y').gsub('and', 'y') }
+  %meta{:property=>"og:description", :content=>@oferta.description + " en " + @oferta.restaurant.name + ". Válida sólo los " + @oferta.valid_days.to_sentence.gsub(', and', ' y').gsub('and', 'y') + "."}
 
 -content_for :javascript do
   %script{:type=>"text/javascript"}
