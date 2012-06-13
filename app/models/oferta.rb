@@ -1,4 +1,4 @@
-# -*- coding: undecided -*-
+# -*- coding: utf-8 -*-
 class Oferta < ActiveRecord::Base
 belongs_to :restaurant
 has_many :main_ofertas

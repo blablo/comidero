@@ -1,6 +1,17 @@
 %html
   %head
-    %title Comidero
+    -if !yield(:title).blank?
+      %title="Comidero :: " + yield(:title)
+    -else
+      %title Comidero
+
+    -if !yield(:description).blank?
+      %meta{:content => yield(:description), :name => "description"}
+    -else
+      %meta{:content => "Obten promociones en comida, hoy.", :name => "description"}
+
+    %meta{:content => "descuentos, comida, guadalajara, hoy", :name => "keywords"}
+
     %link{:rel=>"icon", :type=>"image/png", :href=>"/images/comidero_small.png"}
     =yield(:meta)
     =stylesheet_link_tag 'reset'

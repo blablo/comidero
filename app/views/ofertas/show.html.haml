@@ -1,11 +1,17 @@
+-content_for :title do
+  =oferta_full_description(@oferta)
+
+-content_for :description do
+  =oferta_full_description(@oferta)
+
 -content_for :meta do
-  %meta{:property=>"og:title", :content=>@oferta.description + " en " + @oferta.restaurant.name}
+  %meta{:property=>"og:title", :content=>oferta_full_description(@oferta, true)}
   %meta{:property=>"og:type", :content=>"food"}
   %meta{:property=>"og:url", :content=>cool_oferta_url(@oferta)}
   %meta{:property=>"og:image", :content=>@oferta.picture.url(:medium)}
   %meta{:property=>"og:site_name", :content=>"Comidero"}
   %meta{:property=>"fb:app_id", :content=>"369418443117706"}
-  %meta{:property=>"og:description", :content=>@oferta.description + " en " + @oferta.restaurant.name + ". Válida sólo los " + @oferta.valid_days.to_sentence.gsub(', and', ' y').gsub('and', 'y') + "."}
+  %meta{:property=>"og:description", :content=>oferta_full_description(@oferta) + " Válida sólo los " + @oferta.valid_days.to_sentence.gsub(', and', ' y').gsub('and', 'y') + "."}
 
 -content_for :javascript do
   %script{:type=>"text/javascript"}
@@ -23,7 +29,7 @@
   #main_oferta
     .social_main
       .fb-like{"data-href"=>cool_oferta_url(@oferta), "data-send" => "false", "data-width" => "80", "data-layout" => "button_count", "data-show-faces" => "false"}
-      %a.twitter-share-button{:href => "https://twitter.com/share", "data-url" => cool_oferta_url(@oferta), "data-lang" => "en"} tweet
+      %a.twitter-share-button{:href => "https://twitter.com/share", "data-url" => cool_oferta_url(@oferta), "data-lang" => "en", "data-text" => oferta_full_description(@oferta, true), "data-via" => "comidero"} tweet
 
     .imagen
       .imagen2

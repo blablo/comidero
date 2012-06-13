@@ -4,7 +4,7 @@
   #main_oferta
     .social_main
       .fb-like{"data-href"=>cool_oferta_url(@oferta), "data-send" => "false", "data-width" => "80", "data-layout" => "button_count", "data-show-faces" => "false"}
-      %a.twitter-share-button{:href => "https://twitter.com/share", "data-url" => cool_oferta_url(@oferta), "data-lang" => "en"} tweet
+      %a.twitter-share-button{:href => "https://twitter.com/share", "data-url" => cool_oferta_url(@oferta), "data-lang" => "en", "data-text" => oferta_full_description(@oferta, true), "data-via" => "comidero"} tweet
 
     .imagen
       .imagen2
@@ -51,7 +51,7 @@
     .oferta
       .social
         .fb-like{"data-href"=>cool_oferta_url(oferta), "data-send" => "false", "data-width" => "80", "data-layout" => "button_count", "data-show-faces" => "false"}
-        %a.twitter-share-button{:href => "https://twitter.com/share", "data-url" => cool_oferta_url(oferta), "data-lang" => "en"} tweet
+        %a.twitter-share-button{:href => "https://twitter.com/share", "data-url" => cool_oferta_url(@oferta), "data-lang" => "en", "data-text" => oferta_full_description(@oferta, true), "data-via" => "comidero"} tweet
 
       .imagen
         =image_tag(oferta.picture.url(:thumb))
